@@ -1659,20 +1659,20 @@
 
       .scene {
         padding: clamp(1rem, 4.5vw, 1.6rem) clamp(0.65rem, 5vw, 1.25rem);
-        transform: translateZ(18px) scale(0.94) rotateX(0.55deg);
-        gap: clamp(0.8rem, 4vw, 1.2rem);
+        transform: translateZ(15px) scale(0.9) rotateX(0.4deg);
+        gap: clamp(0.7rem, 4vw, 1rem);
       }
 
       .question {
-        font-size: clamp(0.95rem, 5.5vw, 1.3rem);
+        font-size: clamp(0.9rem, 5.2vw, 1.2rem);
         letter-spacing: clamp(0.05rem, 0.9vw, 0.14rem);
         max-width: 20ch;
       }
 
       .glitch-button {
         width: min(12.5rem, 100%);
-        font-size: clamp(0.65rem, 3.2vw, 0.85rem);
-        padding: clamp(0.45rem, 3vw, 0.75rem) clamp(0.85rem, 5vw, 1.4rem);
+        font-size: clamp(0.6rem, 3vw, 0.8rem);
+        padding: clamp(0.4rem, 3vw, 0.7rem) clamp(0.8rem, 5vw, 1.2rem);
       }
 
       .button-row {
@@ -1682,7 +1682,7 @@
 
       .player-wrap {
         grid-template-columns: 1fr;
-        gap: clamp(1.2rem, 4vw, 1.5rem);
+        gap: clamp(1rem, 3.5vw, 1.2rem);
       }
 
       .player-tracklist {
@@ -1714,25 +1714,25 @@
       }
 
       .player-track {
-        font-size: clamp(0.5rem, 2.8vw, 0.65rem);
-        padding: clamp(0.35rem, 3vw, 0.55rem);
-        flex: 1 1 calc(45% - 0.35rem);
+        font-size: clamp(0.46rem, 2.5vw, 0.6rem);
+        padding: clamp(0.3rem, 3vw, 0.5rem);
+        flex: 1 1 calc(45% - 0.3rem);
       }
     }
 
     @media (max-width: 420px) {
       .scene {
-        gap: clamp(0.65rem, 4vw, 1rem);
-        transform: translateZ(10px) scale(0.92) rotateX(0.25deg);
+        gap: clamp(0.5rem, 4vw, 0.8rem);
+        transform: translateZ(8px) scale(0.85) rotateX(0.2deg);
       }
 
       .question {
-        font-size: clamp(0.85rem, 5vw, 1.15rem);
-        max-width: 22ch;
+        font-size: clamp(0.78rem, 4.5vw, 1.05rem);
+        max-width: 24ch;
       }
 
       .button-row {
-        gap: clamp(0.5rem, 4vw, 0.8rem);
+        gap: clamp(0.45rem, 4vw, 0.7rem);
       }
 
       .player-tracklist {
@@ -1744,13 +1744,13 @@
       .player-track {
         flex: 1 1 auto;
         width: 100%;
-        font-size: clamp(0.48rem, 2.6vw, 0.6rem);
-        padding: clamp(0.32rem, 3vw, 0.5rem);
+        font-size: clamp(0.44rem, 2.4vw, 0.55rem);
+        padding: clamp(0.28rem, 3vw, 0.45rem);
       }
 
       .player-controls {
         flex-direction: column;
-        gap: clamp(0.4rem, 4vw, 0.75rem);
+        gap: clamp(0.35rem, 4vw, 0.6rem);
       }
 
       .player-button {
@@ -1758,7 +1758,7 @@
       }
 
       .player-canvas {
-        height: clamp(100px, 28vh, 150px);
+        height: clamp(90px, 26vh, 130px);
       }
     }
   `;
@@ -2995,11 +2995,19 @@
   }
 
   function seekPlayerAudio(event) {
-    if (!playerState.progressTrack || !playerState.audio || !Number.isFinite(playerState.audio.duration)) {
+    if (
+      !playerState.progressTrack ||
+      !playerState.audio ||
+      !Number.isFinite(playerState.audio.duration)
+    ) {
       return;
     }
     const rect = playerState.progressTrack.getBoundingClientRect();
-    const ratio = clamp((event.clientX - rect.left) / rect.width, 0, 1);
+    const x = event.clientX ?? (event.touches && event.touches[0]?.clientX);
+    if (typeof x !== 'number') {
+      return;
+    }
+    const ratio = clamp((x - rect.left) / rect.width, 0, 1);
     if (playerState.progressFill) {
       playerState.progressFill.style.width = `${ratio * 100}%`;
     }
