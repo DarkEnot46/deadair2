@@ -48,7 +48,7 @@
       position: relative;
       width: min(100%, 1200px);
       min-height: min(100vh, 900px);
-      padding: clamp(2rem, 6vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+      padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 5vw, 3rem);
       display: grid;
       place-items: center;
       grid-template-columns: 1fr;
@@ -1648,35 +1648,36 @@
 
     @media (max-width: 640px) {
       body.crt-body {
-        perspective: 900px;
+        perspective: 700px;
       }
 
       .crt-container {
-        width: 100%;
-        min-height: auto;
-        padding: clamp(1.25rem, 6vw, 2rem) clamp(1rem, 4vw, 1.5rem);
+        width: min(100%, 420px);
+        min-height: clamp(20rem, 80vh, 28rem);
+        padding: clamp(1.25rem, 5vw, 1.75rem) clamp(1rem, 4vw, 1.5rem);
       }
 
       .scene {
-        padding: clamp(1.5rem, 6vw, 2.5rem) clamp(1rem, 6vw, 2rem);
-        transform: translateZ(32px) scale(0.98) rotateX(1.2deg);
-        gap: clamp(1.25rem, 5vw, 2rem);
+        padding: clamp(1.25rem, 5vw, 2rem) clamp(0.8rem, 5vw, 1.5rem);
+        transform: translateZ(25px) scale(0.98) rotateX(0.8deg);
+        gap: clamp(1rem, 4vw, 1.5rem);
       }
 
       .question {
-        font-size: clamp(1.35rem, 8vw, 2rem);
-        letter-spacing: clamp(0.08rem, 1.2vw, 0.2rem);
-        max-width: 16ch;
+        font-size: clamp(1.1rem, 6.5vw, 1.6rem);
+        letter-spacing: clamp(0.06rem, 1vw, 0.16rem);
+        max-width: 18ch;
       }
 
       .glitch-button {
-        width: min(16rem, 100%);
-        font-size: clamp(0.8rem, 4vw, 1rem);
-        padding: clamp(0.55rem, 3vw, 0.9rem) clamp(1.2rem, 6vw, 1.8rem);
+        width: min(14rem, 100%);
+        font-size: clamp(0.7rem, 3.6vw, 0.95rem);
+        padding: clamp(0.5rem, 3.5vw, 0.85rem) clamp(1rem, 6vw, 1.6rem);
       }
 
       .button-row {
-        gap: clamp(0.9rem, 4vw, 1.5rem);
+        gap: clamp(0.7rem, 4vw, 1.2rem);
+        flex-direction: column;
       }
 
       .player-wrap {
@@ -1687,37 +1688,77 @@
       .player-tracklist {
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 0.5rem;
+        gap: 0.45rem;
         justify-content: center;
-      }
-
-      .player-track {
-        flex: 1 1 calc(50% - 0.5rem);
-        text-align: center;
       }
 
       .player-controls {
         justify-content: center;
+        gap: clamp(0.6rem, 3.5vw, 1rem);
       }
 
       .specter-scene,
       .player-scene {
         width: 100%;
-        min-height: clamp(20rem, 70vh, 34rem);
-        padding: clamp(1.5rem, 6vw, 2.5rem);
-        transform: translateZ(20px) scale(0.99) rotateX(0.8deg);
+        min-height: clamp(18rem, 70vh, 30rem);
+        padding: clamp(1.25rem, 6vw, 2.25rem);
+        transform: translateZ(18px) scale(0.99) rotateX(0.6deg);
       }
 
       .player-canvas {
-        height: clamp(140px, 30vh, 220px);
+        height: clamp(120px, 30vh, 200px);
       }
 
       .player-tracklist {
-        gap: 0.45rem;
+        gap: 0.4rem;
       }
 
       .player-track {
-        font-size: clamp(0.55rem, 3vw, 0.75rem);
+        font-size: clamp(0.55rem, 3vw, 0.7rem);
+        padding: clamp(0.42rem, 3vw, 0.6rem);
+        flex: 1 1 calc(45% - 0.4rem);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .scene {
+        gap: clamp(0.8rem, 4vw, 1.2rem);
+        transform: translateZ(12px) scale(0.998) rotateX(0.35deg);
+      }
+
+      .question {
+        font-size: clamp(0.95rem, 5.5vw, 1.3rem);
+        max-width: 20ch;
+      }
+
+      .button-row {
+        gap: clamp(0.6rem, 4vw, 1rem);
+      }
+
+      .player-tracklist {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.4rem;
+      }
+
+      .player-track {
+        flex: 1 1 auto;
+        width: 100%;
+        font-size: clamp(0.55rem, 3.2vw, 0.7rem);
+        padding: clamp(0.38rem, 3vw, 0.6rem);
+      }
+
+      .player-controls {
+        flex-direction: column;
+        gap: clamp(0.5rem, 4vw, 0.9rem);
+      }
+
+      .player-button {
+        width: 100%;
+      }
+
+      .player-canvas {
+        height: clamp(110px, 30vh, 170px);
       }
     }
   `;
@@ -3392,34 +3433,5 @@
   function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
   }
+
 })();
-    @media (max-width: 420px) {
-      .scene {
-        gap: clamp(1rem, 5vw, 1.6rem);
-      }
-
-      .question {
-        font-size: clamp(1.2rem, 7vw, 1.7rem);
-      }
-
-      .player-tracklist {
-        flex-direction: column;
-      }
-
-      .player-track {
-        flex: 1 1 auto;
-        width: 100%;
-      }
-
-      .player-controls {
-        flex-direction: column;
-      }
-
-      .player-button {
-        width: 100%;
-      }
-
-      .player-canvas {
-        height: clamp(120px, 28vh, 180px);
-      }
-    }
