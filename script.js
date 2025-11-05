@@ -1072,6 +1072,7 @@
       background: rgba(2, 6, 10, 0.7);
       overflow: hidden;
       cursor: pointer;
+      touch-action: none;
     }
 
     .player-progress__fill {
@@ -1108,6 +1109,8 @@
       cursor: pointer;
       overflow: hidden;
       transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
     }
 
     .player-button::before,
@@ -1644,16 +1647,36 @@
     }
 
     @media (max-width: 640px) {
+      body.crt-body {
+        perspective: 900px;
+      }
+
+      .crt-container {
+        width: 100%;
+        min-height: auto;
+        padding: clamp(1.25rem, 6vw, 2rem) clamp(1rem, 4vw, 1.5rem);
+      }
+
+      .scene {
+        padding: clamp(1.5rem, 6vw, 2.5rem) clamp(1rem, 6vw, 2rem);
+        transform: translateZ(32px) scale(0.98) rotateX(1.2deg);
+        gap: clamp(1.25rem, 5vw, 2rem);
+      }
+
       .question {
-        letter-spacing: clamp(0.1rem, 0.8vw, 0.25rem);
+        font-size: clamp(1.35rem, 8vw, 2rem);
+        letter-spacing: clamp(0.08rem, 1.2vw, 0.2rem);
+        max-width: 16ch;
       }
 
       .glitch-button {
-        width: min(15rem, 100%);
+        width: min(16rem, 100%);
+        font-size: clamp(0.8rem, 4vw, 1rem);
+        padding: clamp(0.55rem, 3vw, 0.9rem) clamp(1.2rem, 6vw, 1.8rem);
       }
 
       .button-row {
-        gap: 1.25rem;
+        gap: clamp(0.9rem, 4vw, 1.5rem);
       }
 
       .player-wrap {
@@ -1675,6 +1698,26 @@
 
       .player-controls {
         justify-content: center;
+      }
+
+      .specter-scene,
+      .player-scene {
+        width: 100%;
+        min-height: clamp(20rem, 70vh, 34rem);
+        padding: clamp(1.5rem, 6vw, 2.5rem);
+        transform: translateZ(20px) scale(0.99) rotateX(0.8deg);
+      }
+
+      .player-canvas {
+        height: clamp(140px, 30vh, 220px);
+      }
+
+      .player-tracklist {
+        gap: 0.45rem;
+      }
+
+      .player-track {
+        font-size: clamp(0.55rem, 3vw, 0.75rem);
       }
     }
   `;
@@ -3350,3 +3393,33 @@
     return Math.random() * (max - min) + min;
   }
 })();
+    @media (max-width: 420px) {
+      .scene {
+        gap: clamp(1rem, 5vw, 1.6rem);
+      }
+
+      .question {
+        font-size: clamp(1.2rem, 7vw, 1.7rem);
+      }
+
+      .player-tracklist {
+        flex-direction: column;
+      }
+
+      .player-track {
+        flex: 1 1 auto;
+        width: 100%;
+      }
+
+      .player-controls {
+        flex-direction: column;
+      }
+
+      .player-button {
+        width: 100%;
+      }
+
+      .player-canvas {
+        height: clamp(120px, 28vh, 180px);
+      }
+    }
