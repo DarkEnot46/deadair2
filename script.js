@@ -1648,109 +1648,109 @@
 
     @media (max-width: 640px) {
       body.crt-body {
-        perspective: 700px;
+        perspective: 620px;
       }
 
       .crt-container {
-        width: min(100%, 420px);
-        min-height: clamp(20rem, 80vh, 28rem);
-        padding: clamp(1.25rem, 5vw, 1.75rem) clamp(1rem, 4vw, 1.5rem);
+        width: min(100%, 370px);
+        min-height: clamp(18rem, 70vh, 26rem);
+        padding: clamp(1rem, 5vw, 1.5rem) clamp(0.75rem, 4vw, 1.2rem);
       }
 
       .scene {
-        padding: clamp(1.25rem, 5vw, 2rem) clamp(0.8rem, 5vw, 1.5rem);
-        transform: translateZ(25px) scale(0.98) rotateX(0.8deg);
-        gap: clamp(1rem, 4vw, 1.5rem);
+        padding: clamp(1rem, 4.5vw, 1.6rem) clamp(0.65rem, 5vw, 1.25rem);
+        transform: translateZ(18px) scale(0.94) rotateX(0.55deg);
+        gap: clamp(0.8rem, 4vw, 1.2rem);
       }
 
       .question {
-        font-size: clamp(1.1rem, 6.5vw, 1.6rem);
-        letter-spacing: clamp(0.06rem, 1vw, 0.16rem);
-        max-width: 18ch;
+        font-size: clamp(0.95rem, 5.5vw, 1.3rem);
+        letter-spacing: clamp(0.05rem, 0.9vw, 0.14rem);
+        max-width: 20ch;
       }
 
       .glitch-button {
-        width: min(14rem, 100%);
-        font-size: clamp(0.7rem, 3.6vw, 0.95rem);
-        padding: clamp(0.5rem, 3.5vw, 0.85rem) clamp(1rem, 6vw, 1.6rem);
+        width: min(12.5rem, 100%);
+        font-size: clamp(0.65rem, 3.2vw, 0.85rem);
+        padding: clamp(0.45rem, 3vw, 0.75rem) clamp(0.85rem, 5vw, 1.4rem);
       }
 
       .button-row {
-        gap: clamp(0.7rem, 4vw, 1.2rem);
+        gap: clamp(0.55rem, 3.5vw, 0.9rem);
         flex-direction: column;
       }
 
       .player-wrap {
         grid-template-columns: 1fr;
-        gap: 1.75rem;
+        gap: clamp(1.2rem, 4vw, 1.5rem);
       }
 
       .player-tracklist {
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 0.45rem;
+        gap: 0.35rem;
         justify-content: center;
       }
 
       .player-controls {
         justify-content: center;
-        gap: clamp(0.6rem, 3.5vw, 1rem);
+        gap: clamp(0.45rem, 3vw, 0.8rem);
       }
 
       .specter-scene,
       .player-scene {
         width: 100%;
-        min-height: clamp(18rem, 70vh, 30rem);
-        padding: clamp(1.25rem, 6vw, 2.25rem);
-        transform: translateZ(18px) scale(0.99) rotateX(0.6deg);
+        min-height: clamp(16rem, 65vh, 26rem);
+        padding: clamp(1rem, 5vw, 2rem);
+        transform: translateZ(15px) scale(0.95) rotateX(0.4deg);
       }
 
       .player-canvas {
-        height: clamp(120px, 30vh, 200px);
+        height: clamp(110px, 28vh, 180px);
       }
 
       .player-tracklist {
-        gap: 0.4rem;
+        gap: 0.35rem;
       }
 
       .player-track {
-        font-size: clamp(0.55rem, 3vw, 0.7rem);
-        padding: clamp(0.42rem, 3vw, 0.6rem);
-        flex: 1 1 calc(45% - 0.4rem);
+        font-size: clamp(0.5rem, 2.8vw, 0.65rem);
+        padding: clamp(0.35rem, 3vw, 0.55rem);
+        flex: 1 1 calc(45% - 0.35rem);
       }
     }
 
     @media (max-width: 420px) {
       .scene {
-        gap: clamp(0.8rem, 4vw, 1.2rem);
-        transform: translateZ(12px) scale(0.998) rotateX(0.35deg);
+        gap: clamp(0.65rem, 4vw, 1rem);
+        transform: translateZ(10px) scale(0.92) rotateX(0.25deg);
       }
 
       .question {
-        font-size: clamp(0.95rem, 5.5vw, 1.3rem);
-        max-width: 20ch;
+        font-size: clamp(0.85rem, 5vw, 1.15rem);
+        max-width: 22ch;
       }
 
       .button-row {
-        gap: clamp(0.6rem, 4vw, 1rem);
+        gap: clamp(0.5rem, 4vw, 0.8rem);
       }
 
       .player-tracklist {
         flex-direction: column;
         align-items: stretch;
-        gap: 0.4rem;
+        gap: 0.3rem;
       }
 
       .player-track {
         flex: 1 1 auto;
         width: 100%;
-        font-size: clamp(0.55rem, 3.2vw, 0.7rem);
-        padding: clamp(0.38rem, 3vw, 0.6rem);
+        font-size: clamp(0.48rem, 2.6vw, 0.6rem);
+        padding: clamp(0.32rem, 3vw, 0.5rem);
       }
 
       .player-controls {
         flex-direction: column;
-        gap: clamp(0.5rem, 4vw, 0.9rem);
+        gap: clamp(0.4rem, 4vw, 0.75rem);
       }
 
       .player-button {
@@ -1758,7 +1758,7 @@
       }
 
       .player-canvas {
-        height: clamp(110px, 30vh, 170px);
+        height: clamp(100px, 28vh, 150px);
       }
     }
   `;
