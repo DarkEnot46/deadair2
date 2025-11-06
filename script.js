@@ -1876,7 +1876,7 @@
     lastWordTime: 0,
     sideCooldowns: [0, 0, 0],
     wordCooldown: 260,
-    wordLifetime: 1000,
+    wordLifetime: 2500,
     triggerRadius: 42,
     wordOffset: 54,
     wasInside: false,
