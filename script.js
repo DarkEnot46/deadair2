@@ -1653,7 +1653,7 @@
 
       body.crt-body {
         perspective: 560px;
-        align-items: flex-start;
+        align-items: center;
         justify-content: flex-start;
         padding: clamp(0.5rem, 4vh, 1rem) 0;
         overflow-y: auto;
@@ -1664,6 +1664,7 @@
         min-height: auto;
         padding: clamp(0.9rem, 4vw, 1.6rem) clamp(0.75rem, 4vw, 1.2rem);
         animation: none;
+        margin: 0 auto;
       }
 
       .scene {
@@ -1674,6 +1675,10 @@
 
       .pixel-text {
         letter-spacing: clamp(0.08rem, 0.5vw, 0.18rem);
+      }
+
+      .pixel-text:not(input) {
+        text-align: center;
       }
 
       .scene-control {
@@ -1777,6 +1782,8 @@
       .player-timecodes {
         font-size: clamp(0.5rem, 2.4vw, 0.75rem);
         letter-spacing: clamp(0.08rem, 0.55vw, 0.16rem);
+        justify-content: center;
+        gap: clamp(0.6rem, 4vw, 1rem);
       }
 
       .player-controls {
